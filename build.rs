@@ -24,7 +24,7 @@ fn main() {
 		base_config.define("_GNU_SOURCE", Some("1"));
 	}
 
-	if cfg!(unix) {
+	if cfg!(target_os = "freebsd") {
 		base_config.define("HAVE_DLFCN_H", Some("1"));
 		base_config.define("HAVE_GETTIMEOFDAY", Some("1"));
 		base_config.define("HAVE_INTTYPES_H", Some("1"));
