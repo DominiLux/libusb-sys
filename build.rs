@@ -12,7 +12,7 @@ fn main() {
 		link_framework("IOKit");
 		link("objc", false);
 	}
-	if cfg!(target_os = "linux") {
+	if cfg!(target_os = "linux", target_os = "freebsd") {
 		base_config.define("OS_LINUX", Some("1"));
 		base_config.define("HAVE_ASM_TYPES_H", Some("1"));
 		base_config.define("HAVE_LINUX_NETLINK_H", Some("1"));
